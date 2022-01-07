@@ -61,7 +61,18 @@
 ```yaml
 # 在Linux上部署项目
 
-cd到 /kapokmq 或 /serena 文件根目录
+# 单机部署方式
+配置 kapokmq 的 application.yaml
+
+cd到 /kapokmq
+终端执行 ./run.sh
+
+# 集群部署方式
+配置 kapokmq 与 serena 的 application.yaml
+cd到 /serena
+终端执行 ./run.sh
+
+cd到 /kapokmq
 终端执行 ./run.sh
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
@@ -70,8 +81,18 @@ cd到 /kapokmq 或 /serena 文件根目录
 ```yaml
 # 在Windows上部署项目
 
-cd到 /kapokmq 或 /serena 文件根目录
-直接运行exe文件
+# 单机部署方式
+cd到 /kapokmq
+运行 kapokmq.exe
+
+# 集群部署方式
+配置 kapokmq 与 serena 的 application.yaml
+
+cd到 /serena
+运行 serena.exe
+
+cd到 /kapokmq
+运行 kapokmq.exe
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
 ```
