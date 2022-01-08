@@ -52,11 +52,15 @@
 
 ### 目录说明
 
-##### /kapokmq-server 包含两个应用
+##### /kapokmq-server
 
 * /kapokmq-server
-  * /kapokmq `消息队列`
-  * /serena `注册中心`
+  * /kapokmq-server-linux `Linux版本`
+    * /kapokmq `消息队列`
+    * /serena `注册中心` 
+  * /kapokmq-server-windows `Windows版本`
+    * /kapokmq `消息队列`
+    * /serena `注册中心`
 
 ```yaml
 /kapokmq                      # 文件根目录
@@ -64,8 +68,8 @@
     kapokmq                   # Linux二进制文件
     run.sh                    # Linux启动脚本
     /config                   # 配置目录
-        application.yaml      # 配置文件
-    /log                      # 日志目录
+        application.yaml      # 消息队列配置文件
+    /log                      # 日志存储目录
     /view                     # 前端-Vue项目打包文件
     MQDATA                    # 持久化文件
 ```
@@ -75,9 +79,9 @@
     serena.exe                # Windows exe启动文件
     serena                    # Linux二进制文件
     run.sh                    # Linux启动脚本
-    /config                   # 配置目录
+    /config                   # 注册中心配置目录
         application.yaml      # 配置文件
-    /log                      # 日志目录
+    /log                      # 日志存储目录
 ```
 
 ***
