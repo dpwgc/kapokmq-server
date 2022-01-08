@@ -36,6 +36,20 @@
 
 ***
 
+### 项目演示
+
+##### 网页端控制台
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/1.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/2.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/3.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/4.jpg)
+
+***
+
 ### 目录说明
 
 ##### /kapokmq-server 包含两个应用
@@ -45,25 +59,25 @@
   * /serena `注册中心`
 
 ```yaml
-/kapokmq                  # 文件根目录
-    kapokmq.exe           # Windows exe启动文件
-    kapokmq               # Linux二进制文件
-    run.sh                # Linux启动脚本
-    /config               # 配置目录
-        application.yaml  # 配置文件
-    /log                  # 日志目录
-    /view                 # 前端-Vue项目打包文件
-    MQDATA                # 持久化文件
+/kapokmq                      # 文件根目录
+    kapokmq.exe               # Windows exe启动文件
+    kapokmq                   # Linux二进制文件
+    run.sh                    # Linux启动脚本
+    /config                   # 配置目录
+        application.yaml      # 配置文件
+    /log                      # 日志目录
+    /view                     # 前端-Vue项目打包文件
+    MQDATA                    # 持久化文件
 ```
 
 ```yaml
-/serena                   # 文件根目录
-    serena.exe            # Windows exe启动文件
-    serena                # Linux二进制文件
-    run.sh                # Linux启动脚本
-    /config               # 配置目录
-    application.yaml      # 配置文件
-    /log                  # 日志目录
+/serena                       # 文件根目录
+    serena.exe                # Windows exe启动文件
+    serena                    # Linux二进制文件
+    run.sh                    # Linux启动脚本
+    /config                   # 配置目录
+        application.yaml      # 配置文件
+    /log                      # 日志目录
 ```
 
 ***
@@ -75,6 +89,8 @@
 * 服务器需要开放对应的端口号（Gin http服务端口号、Gossip服务端口号）。
 
 * 推荐使用默认配置，可在默认配置的基础上调整。
+
+* 消息队列与注册中心的安全访问密钥secretKey应保持一致。
 
 * 在非内网服务器集群上部署时，需将配置文件中的Addr地址改服务器公网IP。
 
@@ -142,7 +158,7 @@ http://localhost:port/#/Console
 
 ### 配置说明
 
-#### ./kapokmq/config/application.yaml
+#### KapokMQ消息队列配置： ./kapokmq/config/application.yaml
 
 ```yaml
 server:
@@ -203,7 +219,7 @@ cluster:
   registryGossipPort: 8041
 ```
 
-#### ./serena/config/application.yaml
+#### Serena注册中心配置： ./serena/config/application.yaml
 
 ```yaml
 server:
