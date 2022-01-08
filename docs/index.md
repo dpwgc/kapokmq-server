@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# KapokMQ - Serena 服务器应用整合包
 
-You can use the [editor on GitHub](https://github.com/dpwgc/kapokmq-server/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## 基于Golang整合Gossip+WebSocket的轻量级分布式消息队列
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+***
 
-### Markdown
+#### KapokMQ - 消息队列
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* https://github.com/dpwgc/kapokmq
 
-```markdown
-Syntax highlighted code block
+* https://gitee.com/dpwgc/kapokmq
 
-# Header 1
-## Header 2
-### Header 3
+***
 
-- Bulleted
-- List
+#### Serena - 服务发现与注册中心
 
-1. Numbered
-2. List
+* https://github.com/dpwgc/serena
 
-**Bold** and _Italic_ and `Code` text
+* https://gitee.com/dpwgc/serena
 
-[Link](url) and ![Image](src)
-```
+***
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+#### kapokmq-go-client - Golang客户端
 
-### Jekyll Themes
+* https://github.com/dpwgc/kapokmq-go-client
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dpwgc/kapokmq-server/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* https://gitee.com/dpwgc/kapokmq-go-client
 
-### Support or Contact
+***
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### 软件架构
+
+##### 单机部署架构 与 集群部署架构
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/0.jpg)
+
+***
+
+### 项目演示
+
+##### 网页端控制台
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/1.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/2.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/3.jpg)
+
+![avatar](https://dpwgc-1302119999.cos.ap-guangzhou.myqcloud.com/kapokmq/4.jpg)
+
