@@ -1,6 +1,6 @@
-# KapokMQ - Serena 服务器应用整合包
+# 基于Go整合Gossip+WebSocket的轻量级分布式消息队列
 
-## 基于Golang整合Gossip+WebSocket的轻量级分布式消息队列
+## KapokMQ - Serena 服务器应用整合包
 
 ***
 
