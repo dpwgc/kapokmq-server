@@ -78,6 +78,8 @@
 
 #### 在Linux上部署项目
 
+##### 将 kapokmq-server-linux 文件夹上传至服务器
+
 * 单机部署方式
 
 ```yaml
@@ -104,6 +106,8 @@ cd到 /kapokmq
 ```
 
 #### 在Windows上部署项目
+
+##### 将 kapokmq-server-windows 文件夹上传至服务器
 
 * 单机部署方式
 
