@@ -1,4 +1,4 @@
-# KapokMQ - 轻量级分布式消息队列 - 下载
+# KapokMQ - 轻量级分布式消息队列
 
 ## KapokMQ - Serena 服务器应用整合包
 
