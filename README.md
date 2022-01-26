@@ -1,30 +1,24 @@
-# KapokMQ - 轻量级分布式消息队列
+# KapokMQ `轻量级分布式消息队列`
 
-## KapokMQ - Serena 服务器应用整合包
+### KapokMQ & Serena 服务器应用整合包
 
-***
+##### KapokMQ ~ 消息队列源码
 
-#### KapokMQ - 消息队列源码
+* https://github.com/dpwgc/kapokmq `github`
 
-* https://github.com/dpwgc/kapokmq
+* https://gitee.com/dpwgc/kapokmq `gitee`
 
-* https://gitee.com/dpwgc/kapokmq
+##### Serena ~ 服务发现与注册中心源码
 
-***
+* https://github.com/dpwgc/serena `github`
 
-#### Serena - 服务发现与注册中心源码
+* https://gitee.com/dpwgc/serena `gitee`
 
-* https://github.com/dpwgc/serena
+##### kapokmq-go-client ~ Golang客户端
 
-* https://gitee.com/dpwgc/serena
+* https://github.com/dpwgc/kapokmq-go-client `github`
 
-***
-
-#### kapokmq-go-client - Golang客户端
-
-* https://github.com/dpwgc/kapokmq-go-client
-
-* https://gitee.com/dpwgc/kapokmq-go-client
+* https://gitee.com/dpwgc/kapokmq-go-client `gitee`
 
 ***
 
@@ -64,9 +58,11 @@
 
 ***
 
-### 部署方式
+### 注意事项
 
 * 本应用无需安装任何依赖，开箱即用。
+
+* Linux服务器上部署需给予 kapokmq-server-linux 文件目录777权限。
 
 * 服务器需要开放对应的端口号（Gin http服务端口号、Gossip服务端口号）。
 
@@ -74,9 +70,11 @@
 
 * 消息队列与注册中心的安全访问密钥secretKey应保持一致。
 
-* 在非内网服务器集群上部署时，需将配置文件中的Addr地址改服务器公网IP。
+* 在非内网服务器集群上部署时，需将消息队列与注册中心配置文件中的Addr地址改服务器公网IP。
 
-#### 在Linux上部署项目
+***
+
+### 在Linux上部署项目
 
 ##### 将 kapokmq-server-linux 文件夹上传至服务器
 
@@ -85,8 +83,8 @@
 ```yaml
 # 运行kapokmq
 cd到 /kapokmq
-配置 kapokmq 的 config/application.yaml
-终端执行 ./run.sh
+按需修改配置 config/application.yaml
+终端执行 ./run.sh 启动服务
 ```
 
 * 集群部署方式
@@ -94,18 +92,20 @@ cd到 /kapokmq
 ```yaml
 # 运行serena
 cd到 /serena
-配置 serena 的 config/application.yaml
-终端执行 ./run.sh
+按需修改配置 config/application.yaml
+终端执行 ./run.sh 启动服务
 
 # 运行kapokmq
 cd到 /kapokmq
-配置 kapokmq 的 config/application.yaml
-终端执行 ./run.sh
+按需修改配置 config/application.yaml（isCluster需设为1）
+终端执行 ./run.sh 启动服务
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
 ```
 
-#### 在Windows上部署项目
+***
+
+### 在Windows上部署项目
 
 ##### 将 kapokmq-server-windows 文件夹上传至服务器
 
@@ -114,8 +114,8 @@ cd到 /kapokmq
 ```yaml
 # 运行kapokmq
 cd到 /kapokmq
-配置 kapokmq 的 config/application.yaml
-运行 kapokmq.exe
+按需修改配置 config/application.yaml
+运行 kapokmq.exe 启动服务
 ```
 
 * 集群部署方式
@@ -123,18 +123,20 @@ cd到 /kapokmq
 ```yaml
 # 运行serena
 cd到 /serena
-配置 serena 的 config/application.yaml
-运行 serena.exe
+按需修改配置 config/application.yaml
+运行 serena.exe 启动服务
 
 # 运行kapokmq
 cd到 /kapokmq
-配置 kapokmq 的 config/application.yaml
-运行 kapokmq.exe
+按需修改配置 config/application.yaml（isCluster需设为1）
+运行 kapokmq.exe 启动服务
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
 ```
 
-#### 消息队列网页端控制台
+***
+
+### KapokMQ消息队列网页端控制台
 ```yaml
 # 消息队列启动后访问：
 http://localhost:port/#/Console
@@ -142,13 +144,52 @@ http://localhost:port/#/Console
 
 ***
 
+### Serena注册中心开放接口
+
+##### 获取所有消息队列节点信息
+
+* 启动注册中心后，可通过此接口获取消息队列节点列表。
+
+> http://127.0.0.1:8031/Registry/GetNodes
+
+#### 请求方式
+> POST
+
+#### Content-Type
+> form-data
+
+#### 请求Header参数
+
+| 参数        | 示例值   | 是否必填   |  参数描述  |
+| :--------   | :-----  | :-----  | :----  |
+| secretKey     | test |  必填 | 安全访问密钥 |
+
+#### 成功响应
+
+```json
+[
+	{
+		"Name": "mq:123.123.123.111:8011",
+		"Addr": "123.123.123.111",
+		"Port": "8011"
+	},
+	{
+		"Name": "mq:123.123.123.222:8011",
+		"Addr": "123.123.123.222",
+		"Port": "8011"
+	}
+]
+```
+
+***
+
 ### 配置说明
 
-#### KapokMQ消息队列配置： ./kapokmq/config/application.yaml
+##### KapokMQ消息队列配置： ./kapokmq/config/application.yaml
 
 ```yaml
 server:
-  # ip地址/域名
+  # ip地址/域名（公网环境下部署需要配置成公网ip）
   addr: 0.0.0.0
   # Gin服务运行端口号
   port: 8011
@@ -205,11 +246,11 @@ cluster:
   registryGossipPort: 8041
 ```
 
-#### Serena注册中心配置： ./serena/config/application.yaml
+##### Serena注册中心配置： ./serena/config/application.yaml
 
 ```yaml
 server:
-  # ip地址/域名
+  # ip地址/域名（公网环境下部署需要配置成公网ip）
   addr: 0.0.0.0
   # Gin服务端口号
   port: 8031
