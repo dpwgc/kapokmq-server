@@ -137,10 +137,11 @@ cd到 /kapokmq
 ***
 
 ### KapokMQ消息队列网页端控制台
-```yaml
-# 消息队列启动后访问：
-http://localhost:port/#/Console
-```
+
+##### 消息队列启动后访问：
+
+> http://127.0.0.1:8011/#/Console
+
 
 ***
 
