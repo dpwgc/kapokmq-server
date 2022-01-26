@@ -6,6 +6,6 @@ server:
 
 registry:
   # 安全密钥
-  secretKey:
+  secretKey: test
   # Gossip服务运行端口号
   gossipPort: 8041
