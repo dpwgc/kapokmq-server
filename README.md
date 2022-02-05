@@ -41,8 +41,7 @@
     kapokmq.exe               # Windows exe启动文件
     kapokmq                   # Linux二进制文件
     run.sh                    # Linux启动脚本
-    /config                   # 配置目录
-        application.yaml      # 消息队列配置文件
+    application.yaml          # 消息队列配置文件
     /log                      # 日志存储目录
     /view                     # 前端-Vue项目打包文件
     MQDATA                    # 持久化文件
@@ -53,8 +52,7 @@
     serena.exe                # Windows exe启动文件
     serena                    # Linux二进制文件
     run.sh                    # Linux启动脚本
-    /config                   # 注册中心配置目录
-        application.yaml      # 配置文件
+    application.yaml          # 注册中心配置文件
     /log                      # 日志存储目录
 ```
 
@@ -85,7 +83,7 @@
 ```yaml
 # 运行kapokmq
 cd到 /kapokmq
-按需修改配置 config/application.yaml
+按需修改配置 ./application.yaml
 终端执行 ./run.sh 启动服务
 ```
 
@@ -94,12 +92,12 @@ cd到 /kapokmq
 ```yaml
 # 运行serena
 cd到 /serena
-按需修改配置 config/application.yaml
+按需修改配置 ./application.yaml
 终端执行 ./run.sh 启动服务
 
 # 运行kapokmq
 cd到 /kapokmq
-按需修改配置 config/application.yaml（isCluster需设为1）
+按需修改配置 ./application.yaml（isCluster需设为1）
 终端执行 ./run.sh 启动服务
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
@@ -116,7 +114,7 @@ cd到 /kapokmq
 ```yaml
 # 运行kapokmq
 cd到 /kapokmq
-按需修改配置 config/application.yaml
+按需修改配置 ./application.yaml
 运行 kapokmq.exe 启动服务
 ```
 
@@ -125,12 +123,12 @@ cd到 /kapokmq
 ```yaml
 # 运行serena
 cd到 /serena
-按需修改配置 config/application.yaml
+按需修改配置 ./application.yaml
 运行 serena.exe 启动服务
 
 # 运行kapokmq
 cd到 /kapokmq
-按需修改配置 config/application.yaml（isCluster需设为1）
+按需修改配置 ./application.yaml（isCluster需设为1）
 运行 kapokmq.exe 启动服务
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
@@ -189,6 +187,6 @@ cd到 /kapokmq
 
 ### 配置说明
 
-##### KapokMQ消息队列配置： ./kapokmq/config/application.yaml
+##### KapokMQ消息队列配置： ./kapokmq/application.yaml
 
-##### Serena注册中心配置： ./serena/config/application.yaml
+##### Serena注册中心配置： ./serena/application.yaml
