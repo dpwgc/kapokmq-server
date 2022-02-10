@@ -103,6 +103,22 @@ cd到 /kapokmq
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
 ```
 
+* 主从节点绑定
+
+```yaml
+# 主节点配置
+cd到 /kapokmq
+修改配置 ./application.yaml
+（将isSync设为1、isSlave设为0）
+
+# 从节点配置
+cd到 /kapokmq
+修改配置 ./application.yaml
+（将isSync与isSlave都设为1，填写需要绑定的主节点地址）
+
+# 注：先启动主节点再启动从节点
+```
+
 ***
 
 ### 在Windows上部署项目
@@ -132,6 +148,22 @@ cd到 /kapokmq
 运行 kapokmq.exe 启动服务
 
 # 注：如果采用集群方式部署，要先运行注册中心，再运行消息队列
+```
+
+* 主从节点绑定
+
+```yaml
+# 主节点配置
+cd到 /kapokmq
+修改配置 ./application.yaml
+（将isSync设为1、isSlave设为0）
+
+# 从节点配置
+cd到 /kapokmq
+修改配置 ./application.yaml
+（将isSync与isSlave都设为1，填写需要绑定的主节点地址）
+
+# 注：先启动主节点再启动从节点
 ```
 
 ***
